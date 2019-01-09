@@ -1,0 +1,106 @@
+version: 2
+jobs:
+  unit_test:
+    docker:  # run the steps with Docker
+      - image: crystallang/crystal:latest
+    working_directory: ~/codacy-ameba
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: shards install
+      - run:
+          name: Run test
+          command: crystal spec
+
+  publish_local:
+    machine: true
+    working_directory: ~/workdir
+    steps:
+      - checkout
+      - run: 
+          name: Publish tool docker locally
+          command: docker build . -t $CIRCLE_PROJECT_REPONAME:latest
+      - run:
+          name: Save docker to file
+          command: |
+            mkdir -p workspace
+            docker save --output workspace/docker.tar $CIRCLE_PROJECT_REPONAME:latest
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - docker.tar
+
+  plugins_test:
+    machine: true
+    working_directory: ~/
+    steps:
+      - run: 
+          name: Clone test project
+          command: |
+            (git -C ~/codacy-plugins-test fetch --all && 
+              git -C ~/codacy-plugins-test reset --hard origin/master) || 
+                git clone git://github.com/codacy/codacy-plugins-test.git ~/codacy-plugins-test
+      - restore_cache:
+          key: dependencies-{{ checksum "codacy-plugins-test/build.sbt" }}
+      - run: 
+          name: Compile test project
+          working_directory: ~/codacy-plugins-test
+          command: sbt compile
+      - save_cache:
+          key: dependencies-{{ checksum "codacy-plugins-test/build.sbt" }}
+          paths:
+            - "~/.ivy2"
+            - "~/.m2"
+            - "~/.sbt"
+            - "~/codacy-plugins-test/target"
+            - "~/codacy-plugins-test/project/target"
+            - "~/codacy-plugins-test/project/project"
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: Load docker from file
+          command: docker load --input /tmp/workspace/docker.tar
+      - run: 
+          name: Test json
+          working_directory: ~/codacy-plugins-test
+          command: sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:latest"
+      - run:
+          name: Test patterns
+          working_directory: ~/codacy-plugins-test
+          command: sbt -Dcodacy.tests.noremove=true -Dcodacy.tests.threads=8 "runMain codacy.plugins.DockerTest pattern $CIRCLE_PROJECT_REPONAME:latest"
+
+  publish:
+    machine: true
+    working_directory: ~/workdir
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: Load docker from file
+          command: docker load --input /tmp/workspace/docker.tar
+      - deploy:
+          name: Push application Docker image
+          command: |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME
+            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:1.0.$CIRCLE_BUILD_NUM
+            docker push codacy/$CIRCLE_PROJECT_REPONAME
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - unit_test
+      - publish_local
+      - plugins_test:
+          requires:
+            - publish_local
+      - publish:
+          filters:
+            branches:
+              only: master
+          requires:
+            - unit_test
+            - publish_local
+            - plugins_test
