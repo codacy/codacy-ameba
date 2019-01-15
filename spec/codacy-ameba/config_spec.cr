@@ -2,10 +2,9 @@ require "../spec_helper.cr"
 
 module Codacy::Ameba
   describe Config do
-    it "loads default config values" do
+    it "returns nil if there's no config file" do
       config = Config.load("./")
-      config.tools.should eq [] of Tool
-      config.files.should eq [] of String
+      config.should eq nil
     end
 
     it "loads config from the file" do

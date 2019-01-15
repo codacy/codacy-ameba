@@ -8,9 +8,15 @@ module Codacy::Ameba
     def run
       codacy_config = Config.load(dir)
 
-      ameba_config = ::Ameba::Config.load
-      configure_files(ameba_config, codacy_config.files)
-      configure_rules(ameba_config, codacy_config.tools)
+      ameba_config = ::Ameba::Config.load("#{dir}/.ameba.yml", true)
+
+      if codacy_config.is_a?(Codacy::Ameba::Config)
+        configure_files(ameba_config, codacy_config.files)
+        configure_rules(ameba_config, codacy_config.tools)
+      else
+        configure_files(ameba_config, nil)
+        configure_rules(ameba_config)
+      end
       configure_formatter(ameba_config)
 
       ::Ameba.run(ameba_config)
@@ -24,6 +30,16 @@ module Codacy::Ameba
       else
         config.files = files.map { |f| "#{dir}/#{f}" }
       end
+    end
+
+    private def configure_rules(config)
+      config.rules.map! { |r|
+        excluded = r.excluded
+        if excluded.is_a?(Array(String)) 
+          r.excluded = excluded.map { |e| "#{dir}/#{e}" } 
+        end
+        r
+      }
     end
 
     private def configure_rules(config, tools)
