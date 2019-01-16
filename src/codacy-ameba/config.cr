@@ -29,10 +29,11 @@ module Codacy::Ameba
     )
 
     def self.load(base_dir, filename = ".codacy.json")
-      data = File.read("#{base_dir}/#{filename}")
+      path = "#{base_dir}/#{filename}"
+      data = File.read(path)
       Config.from_json(data)
     rescue
-      Config.from_json("{}")
+      nil
     end
   end
 end
