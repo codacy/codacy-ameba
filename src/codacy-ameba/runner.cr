@@ -10,7 +10,7 @@ module Codacy::Ameba
 
       ameba_config = ::Ameba::Config.load("#{dir}/.ameba.yml", true)
 
-      if codacy_config.is_a?(Codacy::Ameba::Config)
+      if codacy_config
         configure_files(ameba_config, codacy_config.files)
         configure_rules(ameba_config, codacy_config.tools)
       else
@@ -35,7 +35,7 @@ module Codacy::Ameba
     private def configure_rules(config)
       config.rules.map! { |r|
         excluded = r.excluded
-        if excluded.is_a?(Array(String)) 
+        if excluded 
           r.excluded = excluded.map { |e| "#{dir}/#{e}" } 
         end
         r
