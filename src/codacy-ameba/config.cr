@@ -28,7 +28,7 @@ module Codacy::Ameba
       tools: {type: Array(Tool), default: [] of Tool}
     )
 
-    def self.load(base_dir, filename = ".codacy.json")
+    def self.load(base_dir, filename = ".codacyrc")
       path = "#{base_dir}/#{filename}"
       data = File.read(path)
       Config.from_json(data)

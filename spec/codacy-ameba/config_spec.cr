@@ -3,7 +3,7 @@ require "../spec_helper.cr"
 module Codacy::Ameba
   describe Config do
     it "returns nil if there's no config file" do
-      config = Config.load("./")
+      config = Config.load("/")
       config.should eq nil
     end
 
