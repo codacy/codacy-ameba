@@ -2,7 +2,7 @@ version: 2
 jobs:
   unit_test:
     docker:  # run the steps with Docker
-      - image: crystallang/crystal:latest
+      - image: crystallang/crystal:0.27.0
     working_directory: ~/codacy-ameba
     steps:
       - checkout

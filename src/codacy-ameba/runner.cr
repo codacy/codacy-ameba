@@ -6,7 +6,7 @@ module Codacy::Ameba
     end
 
     def run
-      codacy_config = Config.load(dir)
+      codacy_config = Config.load("/")
 
       ameba_config = ::Ameba::Config.load("#{dir}/.ameba.yml", true)
 
