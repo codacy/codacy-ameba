@@ -26,9 +26,9 @@ module Codacy::Ameba
 
     private def configure_files(config, files)
       if files.nil? || files.empty?
-        config.files = default_files
+        config.globs = default_files
       else
-        config.files = files.map { |f| "#{dir}/#{f}" }
+        config.globs = files.map { |f| "#{dir}/#{f}" }
       end
     end
 
