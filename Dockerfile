@@ -1,4 +1,4 @@
-FROM crystallang/crystal:0.27.0 as builder
+FROM crystallang/crystal:0.31.1 as builder
 WORKDIR /tmp/build
 COPY . /tmp/build
 RUN shards build --production

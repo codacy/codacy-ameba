@@ -1,10 +1,10 @@
 name: codacy-ameba
-version: 0.1.0
+version: 0.1.1
 
 authors:
   - Vitalii Elenhaupt <velenhaupt@gmail.com>
 
-crystal: 0.27.0
+crystal: 0.31.1
 
 license: MIT
 

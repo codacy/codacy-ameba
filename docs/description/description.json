@@ -140,6 +140,13 @@
     "parameters": []
   },
   {
+    "patternId": "Metrics_CyclomaticComplexity",
+    "title": "Disallows methods with a cyclomatic complexity higher than `MaxComplexity`",
+    "description": "Disallows methods with a cyclomatic complexity higher than `MaxComplexity`",
+    "timeToFix": 5,
+    "parameters": []
+  },
+  {
     "patternId": "Performance_AnyAfterFilter",
     "title": "Identifies usage of `any?` calls that follow filters.",
     "description": "Identifies usage of `any?` calls that follow filters.",
@@ -199,6 +206,13 @@
     "patternId": "Style_RedundantBegin",
     "title": "Disallows redundant begin blocks",
     "description": "Disallows redundant begin blocks",
+    "timeToFix": 5,
+    "parameters": []
+  },
+  {
+    "patternId": "Style_RedundantReturn",
+    "title": "Reports redundant return expressions",
+    "description": "Reports redundant return expressions",
     "timeToFix": 5,
     "parameters": []
   },

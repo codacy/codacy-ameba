@@ -1,6 +1,6 @@
 {
   "name": "ameba",
-  "version": "0.8.1",
+  "version": "0.10.1",
   "patterns": [
     {
       "patternId": "Layout_LineLength",
@@ -123,6 +123,12 @@
       "parameters": []
     },
     {
+      "patternId": "Metrics_CyclomaticComplexity",
+      "level": "Info",
+      "category": "ErrorProne",
+      "parameters": []
+    },
+    {
       "patternId": "Performance_AnyAfterFilter",
       "level": "Warning",
       "category": "Performance",
@@ -172,6 +178,12 @@
     },
     {
       "patternId": "Style_RedundantBegin",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": []
+    },
+    {
+      "patternId": "Style_RedundantReturn",
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": []
