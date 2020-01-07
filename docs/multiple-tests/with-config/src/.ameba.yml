@@ -1,0 +1,12 @@
+Lint/UnusedArgument:
+    Description: Disallows unused arguments
+    IgnoreDefs: true
+    IgnoreBlocks: false
+    IgnoreProcs: false
+    Enabled: true
+    Excluded:
+      - send_grid_adapter.cr
+
+Lint/UselessAssign:
+    Description: Disallows useless variable assignments
+    Enabled: true

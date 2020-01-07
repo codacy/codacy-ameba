@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<checkstyle version="1.5">
+    <file name="send_grid_adapter.cr">
+        <error source="Lint_UnusedArgument" line="91" message="Unused argument `key`. If it's necessary, use `_` as an argument name to indicate that it won't be used." severity="warning" />
+        <error source="Lint_UnusedArgument" line="73" message="Unused argument `key`. If it's necessary, use `_` as an argument name to indicate that it won't be used." severity="warning" />
+        <error source="Lint_UnusedArgument" line="57" message="Unused argument `value`. If it's necessary, use `_` as an argument name to indicate that it won't be used." severity="warning" />
+        <error source="Lint_UnusedArgument" line="63" message="Unused argument `value`. If it's necessary, use `_` as an argument name to indicate that it won't be used." severity="warning" />
+    </file>
+</checkstyle>

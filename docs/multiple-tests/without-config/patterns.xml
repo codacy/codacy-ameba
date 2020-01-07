@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module name="root">
+    <module name="Layout_LineLength" />
+    <module name="Style_UnlessElse" />
+</module>

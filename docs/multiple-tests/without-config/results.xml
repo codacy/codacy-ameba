@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<checkstyle version="1.5">
+    <file name="Layout_LineLength.cr">
+        <error source="Layout_LineLength" line="4" message="Line too long" severity="info" />
+    </file>
+</checkstyle>
