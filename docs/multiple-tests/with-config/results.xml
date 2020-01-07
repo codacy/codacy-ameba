@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<checkstyle version="1.5">
+    <file name="send_grid_adapter.cr">
+        <error source="Lint_UselessAssign" line="57" message="Useless assignment to variable `reply_to_header`" severity="warning" />
+    </file>
+</checkstyle>
