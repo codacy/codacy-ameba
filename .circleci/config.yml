@@ -1,15 +1,17 @@
 version: 2.1
 
 orbs:
+  codacy: codacy/base@2.0.1
   codacy_plugins_test: codacy/plugins-test@0.7.1
 
 jobs:
   unit_test:
-    docker:  # run the steps with Docker
+    docker: # run the steps with Docker
       - image: crystallang/crystal:0.31.1
-    working_directory: ~/codacy-ameba
+    working_directory: ~/workdir
     steps:
-      - checkout
+      - attach_workspace:
+          at: ~/workdir
       - run:
           name: Install dependencies
           command: shards install
@@ -17,52 +19,35 @@ jobs:
           name: Run test
           command: crystal spec
 
-  publish_local:
-    machine: true
-    working_directory: ~/workdir
-    steps:
-      - checkout
-      - run: 
-          name: Publish tool docker locally
-          command: docker build . -t $CIRCLE_PROJECT_REPONAME:latest
-      - run:
-          name: Save docker to file
-          command: |
-            docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
-      - persist_to_workspace:
-          root: ~/workdir
-          paths:
-            - '*'
-
-  publish:
-    machine: true
-    working_directory: ~/workdir
-    steps:
-      - attach_workspace:
-          at: ~/workdir
-      - run:
-          name: Load docker from file
-          command: docker load --input docker-image.tar
-      - deploy:
-          name: Push application Docker image
-          command: |
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME
-            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:2.0.$CIRCLE_BUILD_NUM
-            docker push codacy/$CIRCLE_PROJECT_REPONAME
-
 workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - unit_test
-      - publish_local
+      - codacy/checkout_and_version
+      - unit_test:
+          requires:
+            - codacy/checkout_and_version
+      - codacy/shell:
+          name: publish_local
+          cmd: |
+            docker build -t $CIRCLE_PROJECT_REPONAME:latest .
+            docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
+          persist_to_workspace: true
+          requires:
+            - codacy/checkout_and_version
       - codacy_plugins_test/run:
           name: plugins_test
           run_multiple_tests: true
           requires:
             - publish_local
-      - publish:
+      - codacy/shell:
+          name: publish_dockerhub
+          cmd: |
+            docker load --input docker-image.tar
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:latest
+            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
+            docker push codacy/$CIRCLE_PROJECT_REPONAME
           filters:
             branches:
               only: master
@@ -70,3 +55,6 @@ workflows:
             - unit_test
             - publish_local
             - plugins_test
+      - codacy/tag_version:
+          requires:
+            - publish_dockerhub
