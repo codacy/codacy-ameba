@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  codacy_plugins_test: codacy/plugins-test@0.7.0
+  codacy_plugins_test: codacy/plugins-test@0.7.1
 
 jobs:
   unit_test:
@@ -28,21 +28,21 @@ jobs:
       - run:
           name: Save docker to file
           command: |
-            docker save --output ~/workdir/docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
+            docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
       - persist_to_workspace:
-          root: ~/
+          root: ~/workdir
           paths:
-            - workdir/docker-image.tar
+            - '*'
 
   publish:
     machine: true
     working_directory: ~/workdir
     steps:
       - attach_workspace:
-          at: ~/
+          at: ~/workdir
       - run:
           name: Load docker from file
-          command: docker load --input ~/workdir/docker-image.tar
+          command: docker load --input docker-image.tar
       - deploy:
           name: Push application Docker image
           command: |
