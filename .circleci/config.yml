@@ -56,5 +56,6 @@ workflows:
             - publish_local
             - plugins_test
       - codacy/tag_version:
+          context: CodacyAWS
           requires:
             - publish_dockerhub
