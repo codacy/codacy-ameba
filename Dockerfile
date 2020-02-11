@@ -1,12 +1,10 @@
-FROM crystallang/crystal:0.31.1 as builder
+FROM crystallang/crystal:0.32.1-alpine as builder
 WORKDIR /tmp/build
 COPY . /tmp/build
 RUN shards build --production
 
-FROM ubuntu:16.04
-RUN apt-get update && apt-get -y install libyaml-dev libevent-dev \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+FROM alpine:3.10
+RUN apk add yaml pcre libgcc
 COPY docs /docs
 COPY --from=builder /tmp/build/bin/codacy-ameba /opt/app/
 # Configure user
