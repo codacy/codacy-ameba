@@ -4,7 +4,7 @@ COPY . /tmp/build
 RUN shards build --production
 
 FROM alpine:3.10
-RUN apk add yaml libunwind pcre libgcc
+RUN apk add yaml pcre libgcc
 COPY docs /docs
 COPY --from=builder /tmp/build/bin/codacy-ameba /opt/app/
 # Configure user
