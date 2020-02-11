@@ -7,7 +7,7 @@ orbs:
 jobs:
   unit_test:
     docker: # run the steps with Docker
-      - image: crystallang/crystal:0.31.1
+      - image: crystallang/crystal:0.32.1
     working_directory: ~/workdir
     steps:
       - attach_workspace:

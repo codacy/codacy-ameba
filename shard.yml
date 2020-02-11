@@ -4,7 +4,7 @@ version: 0.1.1
 authors:
   - Vitalii Elenhaupt <velenhaupt@gmail.com>
 
-crystal: 0.31.1
+crystal: 0.32.1
 
 license: MIT
 
