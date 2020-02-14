@@ -1,6 +1,6 @@
 {
   "name": "ameba",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "patterns": [
     {
       "patternId": "Layout_LineLength",
@@ -70,6 +70,18 @@
     },
     {
       "patternId": "Lint_RandZero",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": []
+    },
+    {
+      "patternId": "Lint_RedundantWithIndex",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": []
+    },
+    {
+      "patternId": "Lint_RedundantWithObject",
       "level": "Warning",
       "category": "ErrorProne",
       "parameters": []
