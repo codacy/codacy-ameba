@@ -84,6 +84,20 @@
     "parameters": []
   },
   {
+    "patternId": "Lint_RedundantWithIndex",
+    "title": "Disallows redundant `with_index` calls",
+    "description": "Disallows redundant `with_index` calls",
+    "timeToFix": 5,
+    "parameters": []
+  },
+  {
+    "patternId": "Lint_RedundantWithObject",
+    "title": "Disallows redundant `with_object` calls",
+    "description": "Disallows redundant `with_object` calls",
+    "timeToFix": 5,
+    "parameters": []
+  },
+  {
     "patternId": "Lint_ShadowedArgument",
     "title": "Disallows shadowed arguments",
     "description": "Disallows shadowed arguments",
