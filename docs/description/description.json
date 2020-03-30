@@ -3,259 +3,246 @@
     "patternId": "Layout_LineLength",
     "title": "Disallows lines longer than `MaxLength` number of symbols",
     "description": "Disallows lines longer than `MaxLength` number of symbols",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Layout_TrailingBlankLines",
     "title": "Disallows trailing blank lines",
     "description": "Disallows trailing blank lines",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Layout_TrailingWhitespace",
     "title": "Disallows trailing whitespaces",
     "description": "Disallows trailing whitespaces",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_ComparisonToBoolean",
     "title": "Disallows comparison to booleans",
     "description": "Disallows comparison to booleans",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_DebuggerStatement",
     "title": "Disallows calls to debugger",
     "description": "Disallows calls to debugger",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_EmptyEnsure",
     "title": "Disallows empty ensure statement",
     "description": "Disallows empty ensure statement",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_EmptyExpression",
     "title": "Disallows empty expressions",
     "description": "Disallows empty expressions",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Lint_EmptyLoop",
+    "title": "Disallows empty loops",
+    "description": "Disallows empty loops",
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_HashDuplicatedKey",
     "title": "Disallows duplicated keys in hash literals",
     "description": "Disallows duplicated keys in hash literals",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_LiteralInCondition",
     "title": "Disallows useless conditional statements that contain a literal in place of a variable or predicate function",
     "description": "Disallows useless conditional statements that contain a literal in place of a variable or predicate function",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_LiteralInInterpolation",
     "title": "Disallows useless string interpolations",
     "description": "Disallows useless string interpolations",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_PercentArrays",
     "title": "Disallows some unwanted symbols in percent array literals",
     "description": "Disallows some unwanted symbols in percent array literals",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_RandZero",
     "title": "Disallows rand zero calls",
     "description": "Disallows rand zero calls",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Lint_RedundantStringCoercion",
+    "title": "Disallows redundant string conversions in interpolation",
+    "description": "Disallows redundant string conversions in interpolation",
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_RedundantWithIndex",
     "title": "Disallows redundant `with_index` calls",
     "description": "Disallows redundant `with_index` calls",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_RedundantWithObject",
     "title": "Disallows redundant `with_object` calls",
     "description": "Disallows redundant `with_object` calls",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_ShadowedArgument",
     "title": "Disallows shadowed arguments",
     "description": "Disallows shadowed arguments",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_ShadowedException",
     "title": "Disallows rescued exception that get shadowed",
     "description": "Disallows rescued exception that get shadowed",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_ShadowingOuterLocalVar",
     "title": "Disallows the usage of the same name as outer local variables for block or proc arguments.",
     "description": "Disallows the usage of the same name as outer local variables for block or proc arguments.",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Lint_SharedVarInFiber",
+    "title": "Disallows shared variables in fibers.",
+    "description": "Disallows shared variables in fibers.",
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_UnneededDisableDirective",
     "title": "Reports unneeded disable directives in comments",
     "description": "Reports unneeded disable directives in comments",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_UnreachableCode",
     "title": "Reports unreachable code",
     "description": "Reports unreachable code",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_UnusedArgument",
     "title": "Disallows unused arguments",
     "description": "Disallows unused arguments",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_UselessAssign",
     "title": "Disallows useless variable assignments",
     "description": "Disallows useless variable assignments",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Lint_UselessConditionInWhen",
     "title": "Disallows useless conditions in when",
     "description": "Disallows useless conditions in when",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Metrics_CyclomaticComplexity",
     "title": "Disallows methods with a cyclomatic complexity higher than `MaxComplexity`",
     "description": "Disallows methods with a cyclomatic complexity higher than `MaxComplexity`",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Performance_AnyAfterFilter",
     "title": "Identifies usage of `any?` calls that follow filters.",
     "description": "Identifies usage of `any?` calls that follow filters.",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Performance_FirstLastAfterFilter",
     "title": "Identifies usage of `first/last/first?/last?` calls that follow filters.",
     "description": "Identifies usage of `first/last/first?/last?` calls that follow filters.",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Performance_SizeAfterFilter",
     "title": "Identifies usage of `size` calls that follow filter",
     "description": "Identifies usage of `size` calls that follow filter",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_ConstantNames",
     "title": "Enforces constant names to be in screaming case",
     "description": "Enforces constant names to be in screaming case",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_LargeNumbers",
     "title": "Disallows usage of large numbers without underscore",
     "description": "Disallows usage of large numbers without underscore",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_MethodNames",
     "title": "Enforces method names to be in underscored case",
     "description": "Enforces method names to be in underscored case",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_NegatedConditionsInUnless",
     "title": "Disallows negated conditions in unless",
     "description": "Disallows negated conditions in unless",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_PredicateName",
     "title": "Disallows tautological predicate names",
     "description": "Disallows tautological predicate names",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_RedundantBegin",
     "title": "Disallows redundant begin blocks",
     "description": "Disallows redundant begin blocks",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Style_RedundantNext",
+    "title": "Reports redundant next expressions",
+    "description": "Reports redundant next expressions",
+    "timeToFix": 5
   },
   {
     "patternId": "Style_RedundantReturn",
     "title": "Reports redundant return expressions",
     "description": "Reports redundant return expressions",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_TypeNames",
     "title": "Enforces type names in camelcase manner",
     "description": "Enforces type names in camelcase manner",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_UnlessElse",
     "title": "Disallows the use of an `else` block with the `unless`",
     "description": "Disallows the use of an `else` block with the `unless`",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_VariableNames",
     "title": "Enforces variable names to be in underscored case",
     "description": "Enforces variable names to be in underscored case",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   },
   {
     "patternId": "Style_WhileTrue",
     "title": "Disallows while statements with a true literal as condition",
     "description": "Disallows while statements with a true literal as condition",
-    "timeToFix": 5,
-    "parameters": []
+    "timeToFix": 5
   }
 ]
