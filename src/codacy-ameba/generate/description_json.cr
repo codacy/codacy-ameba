@@ -23,7 +23,9 @@ module Codacy::Ameba
           json.field "title", title
           json.field "description", description
           json.field "timeToFix", time_to_fix
-          json.field "parameters", parameters
+          if !parameters.empty?
+            json.field "parameters", parameters
+          end
         end
       end
     end

@@ -21,7 +21,9 @@ module Codacy::Ameba
           json.field "patternId", id
           json.field "level", level
           json.field "category", category
-          json.field "parameters", parameters
+          if !parameters.empty?
+            json.field "parameters", parameters
+          end
         end
       end
     end
