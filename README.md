@@ -13,13 +13,13 @@ Tooling & Docker Definition for running [Ameba](https://github.com/veelenga/ameb
 Build the docker image
 
 ```
-docker build . -t ameba/codacy
+docker build -t codacy-ameba .
 ```
 
 Run on a project
 
 ```
-docker run -it -v $srcDir:/src ameba/codacy
+docker run --rm -v $srcDir:/src codacy-ameba
 ```
 
 Regenerate `docs` folder:
@@ -36,12 +36,11 @@ Run regular unit tests: `crystal spec`
 Run [Codacy Plugin Tests](https://github.com/codacy/codacy-plugins-test) against the docker image:
 
 ```sh
-# In codacy-ameba
-docker build . -t ameba/codacy:latest
+docker build -t codacy-ameba .
 
-# in codacy-plugins-test
-sbt "runMain codacy.plugins.DockerTest all ameba/codacy:latest"
-```
+codacy-plugins-test pattern codacy-ameba
+codacy-plugins-test json codacy-ameba
+codacy-plugins-test multiple codacy-ameba
 
 ## Bump versions
 

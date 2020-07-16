@@ -18,6 +18,12 @@
     "timeToFix": 5
   },
   {
+    "patternId": "Lint_BadDirective",
+    "title": "Reports bad comment directives",
+    "description": "Reports bad comment directives",
+    "timeToFix": 5
+  },
+  {
     "patternId": "Lint_ComparisonToBoolean",
     "title": "Disallows comparison to booleans",
     "description": "Disallows comparison to booleans",
@@ -177,6 +183,12 @@
     "patternId": "Style_ConstantNames",
     "title": "Enforces constant names to be in screaming case",
     "description": "Enforces constant names to be in screaming case",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Style_IsANil",
+    "title": "Disallows calls to `is_a?(Nil)` in favor of `nil?`",
+    "description": "Disallows calls to `is_a?(Nil)` in favor of `nil?`",
     "timeToFix": 5
   },
   {

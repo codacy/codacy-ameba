@@ -1,13 +1,13 @@
 version: 2.1
 
 orbs:
-  codacy: codacy/base@2.10.0
-  codacy_plugins_test: codacy/plugins-test@0.10.6
+  codacy: codacy/base@4.2.7
+  codacy_plugins_test: codacy/plugins-test@0.13.0
 
 jobs:
   unit_test:
     docker: # run the steps with Docker
-      - image: crystallang/crystal:0.33.0
+      - image: crystallang/crystal:0.35.1
     working_directory: ~/workdir
     steps:
       - attach_workspace:

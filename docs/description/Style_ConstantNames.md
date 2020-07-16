@@ -10,8 +10,8 @@ DOCUMENTATION_URL = "http://crystal-lang.org/docs"
 And these are invalid names:
 
 ```
-MyBadConstant = 1
-Wrong_NAME    = 2
+myBadConstant = 1
+Wrong_NAME = 2
 ```
 
 YAML configuration example:
