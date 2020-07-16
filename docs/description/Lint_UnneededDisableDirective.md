@@ -2,7 +2,7 @@ A rule that reports unneeded disable directives.
 For example, this is considered invalid:
 
 ```
-# ameba:disable PredicateName
+# ameba:disable Style/PredicateName
 def comment?
   do_something
 end
@@ -15,4 +15,11 @@ have any effect, the snippet should be written as the following:
 def comment?
   do_something
 end
+```
+
+YAML configuration example:
+
+```
+Lint/UnneededDisableDirective
+  Enabled: true
 ```

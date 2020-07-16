@@ -1,6 +1,6 @@
 {
   "name": "ameba",
-  "version": "0.12.0",
+  "version": "0.13.1",
   "patterns": [
     {
       "patternId": "Layout_LineLength",
@@ -16,6 +16,11 @@
       "patternId": "Layout_TrailingWhitespace",
       "level": "Info",
       "category": "CodeStyle"
+    },
+    {
+      "patternId": "Lint_BadDirective",
+      "level": "Warning",
+      "category": "ErrorProne"
     },
     {
       "patternId": "Lint_ComparisonToBoolean",
@@ -149,6 +154,11 @@
     },
     {
       "patternId": "Style_ConstantNames",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "Style_IsANil",
       "level": "Warning",
       "category": "CodeStyle"
     },

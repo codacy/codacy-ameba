@@ -1,10 +1,10 @@
-FROM crystallang/crystal:0.32.1-alpine as builder
+FROM crystallang/crystal:0.35.1-alpine as builder
 WORKDIR /tmp/build
 COPY . /tmp/build
 RUN shards build --production
 
-FROM alpine:3.10
-RUN apk add yaml pcre libgcc
+FROM alpine:3.12
+RUN apk add yaml pcre libgcc gc
 COPY docs /docs
 COPY --from=builder /tmp/build/bin/codacy-ameba /opt/app/
 # Configure user
