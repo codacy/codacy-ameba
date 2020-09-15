@@ -1,3 +1,5 @@
+require "./defaults.cr"
+
 module Codacy::Ameba
   class PatternsJSON
     record Parameter,
@@ -15,7 +17,8 @@ module Codacy::Ameba
       id : String,
       level : String,
       category : String,
-      parameters : Array(Parameter) do
+      parameters : Array(Parameter),
+      enabled : Bool do
       def to_json(json : JSON::Builder)
         json.object do
           json.field "patternId", id
@@ -24,6 +27,7 @@ module Codacy::Ameba
           if !parameters.empty?
             json.field "parameters", parameters
           end
+          json.field "enabled", enabled
         end
       end
     end
@@ -32,7 +36,7 @@ module Codacy::Ameba
 
     def initialize(rules, @filename = "docs/patterns.json")
       @patterns = rules.map do |rule|
-        Pattern.new name(rule), level(rule), category(rule), [] of Parameter
+        Pattern.new name(rule), level(rule), category(rule), [] of Parameter, enabled(rule)
       end
     end
 
@@ -66,6 +70,10 @@ module Codacy::Ameba
       else
         "ErrorProne"
       end
+    end
+
+    private def enabled(rule)
+      DefaultPatterns.patterns.includes?(name(rule))
     end
 
     def generate

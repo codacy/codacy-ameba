@@ -5,217 +5,260 @@
     {
       "patternId": "Layout_LineLength",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "Layout_TrailingBlankLines",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Layout_TrailingWhitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Lint_BadDirective",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_ComparisonToBoolean",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_DebuggerStatement",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_EmptyEnsure",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_EmptyExpression",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_EmptyLoop",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_HashDuplicatedKey",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_LiteralInCondition",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_LiteralInInterpolation",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_PercentArrays",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_RandZero",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_RedundantStringCoercion",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_RedundantWithIndex",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_RedundantWithObject",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_ShadowedArgument",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_ShadowedException",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_ShadowingOuterLocalVar",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_SharedVarInFiber",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_UnneededDisableDirective",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_UnreachableCode",
       "level": "Warning",
-      "category": "UnusedCode"
+      "category": "UnusedCode",
+      "enabled": true
     },
     {
       "patternId": "Lint_UnusedArgument",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_UselessAssign",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Lint_UselessConditionInWhen",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "Metrics_CyclomaticComplexity",
       "level": "Info",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Performance_AnyAfterFilter",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": false
     },
     {
       "patternId": "Performance_FirstLastAfterFilter",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": false
     },
     {
       "patternId": "Performance_SizeAfterFilter",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": false
     },
     {
       "patternId": "Style_ConstantNames",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Style_IsANil",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "Style_LargeNumbers",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "Style_MethodNames",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Style_NegatedConditionsInUnless",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Style_PredicateName",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Style_RedundantBegin",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Style_RedundantNext",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "Style_RedundantReturn",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "Style_TypeNames",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Style_UnlessElse",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Style_VariableNames",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "Style_WhileTrue",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     }
   ]
 }
