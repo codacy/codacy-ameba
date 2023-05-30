@@ -8,7 +8,10 @@ module Codacy::Ameba
     def run
       codacy_config = Config.load("/")
 
-      ameba_config = ::Ameba::Config.load("#{dir}/.ameba.yml", true)
+      ameba_config = ::Ameba::Config.load(
+        Path[dir, ::Ameba::Config::FILENAME],
+        colors: true,
+      )
 
       if codacy_config
         configure_files(ameba_config, codacy_config.files)
@@ -28,29 +31,28 @@ module Codacy::Ameba
       if files.nil? || files.empty?
         config.globs = default_files
       else
-        config.globs = files.map { |f| "#{dir}/#{f}" }
+        config.globs = files.map { |path| "#{dir}/#{path}" }
       end
     end
 
     private def configure_rules(config)
-      config.rules.map! { |r|
-        excluded = r.excluded
-        if excluded 
-          r.excluded = excluded.map { |e| "#{dir}/#{e}" } 
-        end
-        r
-      }
+      config.rules.map! do |rule|
+        rule.excluded.try &.map! { |path| "#{dir}/#{path}" }
+        rule
+      end
     end
 
     private def configure_rules(config, tools)
-      return if tools.nil?
+      return unless tools
 
       patterns = tools
-        .find { |tool| tool.name == TOOL_NAME }
-        .try &.patterns
+        .find(&.name.== TOOL_NAME)
+        .try(&.patterns)
 
       if patterns
-        selected_rule_names = patterns.map { |pattern| Ameba.get_rule_name(pattern.id) }
+        selected_rule_names = patterns.map do |pattern|
+          Ameba.get_rule_name(pattern.id)
+        end
         config.rules.map! { |r| r.enabled = false; r }
         config.update_rules(selected_rule_names, enabled: true)
       else

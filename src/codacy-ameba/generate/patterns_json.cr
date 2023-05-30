@@ -1,16 +1,11 @@
-require "./defaults.cr"
+require "./defaults"
 
 module Codacy::Ameba
   class PatternsJSON
     record Parameter,
       name : String,
       default : String do
-      def to_json(json : JSON::Builder)
-        json.object do
-          json.field "name", name
-          json.field "default", default
-        end
-      end
+        include JSON::Serializable
     end
 
     record Pattern,
@@ -36,7 +31,13 @@ module Codacy::Ameba
 
     def initialize(rules, @filename = "docs/patterns.json")
       @patterns = rules.map do |rule|
-        Pattern.new name(rule), level(rule), category(rule), [] of Parameter, enabled(rule)
+        Pattern.new(
+          id: name(rule),
+          level: level(rule),
+          category: category(rule),
+          parameters: [] of Parameter,
+          enabled: enabled(rule),
+        )
       end
     end
 
@@ -48,7 +49,7 @@ module Codacy::Ameba
       case
       when rule.name.includes?("Syntax")
         "Error"
-      when ["Lint", "Performance", "Style"].includes?(rule.group)
+      when rule.group.in?("Lint", "Performance", "Style")
         "Warning"
       else
         "Info"
@@ -56,24 +57,22 @@ module Codacy::Ameba
     end
 
     private def category(rule)
-      case
-      when rule.name.includes?("UnreachableCode")
-        "UnusedCode"
-      when rule.group == "Performance"
-        "Performance"
-      when ["Style", "Layout"].includes?(rule.group)
-        "CodeStyle"
-      when rule.group == "Security"
-        "Security"
-      when rule.group == "Documentation"
-        "Documentation"
+      case rule.group
+      when "Performance"     then "Performance"
+      when "Style", "Layout" then "CodeStyle"
+      when "Security"        then "Security"
+      when "Documentation"   then "Documentation"
       else
-        "ErrorProne"
+        if rule.name.includes?("UnreachableCode")
+          "UnusedCode"
+        else
+          "ErrorProne"
+        end
       end
     end
 
     private def enabled(rule)
-      DefaultPatterns.patterns.includes?(name(rule))
+      name(rule).in?(DefaultPatterns.patterns)
     end
 
     def generate
