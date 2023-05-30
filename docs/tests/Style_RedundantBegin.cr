@@ -1,15 +1,15 @@
 # #Patterns: Style_RedundantBegin
 
-# #Warn: Style_RedundantBegin
 def method
+  # #Warn: Style_RedundantBegin
   begin
     a = 1
     b = 2
   end
 end
 
-# #Warn: Style_RedundantBegin
 def method(a : String) : String
+  # #Warn: Style_RedundantBegin
   begin
     open_file
     do_some_stuff

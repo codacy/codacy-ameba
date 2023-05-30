@@ -12,11 +12,6 @@ end
 
 begin
   # #Warn: Lint_EmptyExpression
-  nil
-end
-
-begin
-  # #Warn: Lint_EmptyExpression
   ()
 end
 
