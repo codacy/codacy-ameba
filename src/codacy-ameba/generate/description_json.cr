@@ -3,7 +3,7 @@ module Codacy::Ameba
     record Parameter,
       name : String,
       description : String do
-        include JSON::Serializable
+      include JSON::Serializable
     end
 
     record Description,
@@ -27,7 +27,7 @@ module Codacy::Ameba
 
     @descriptions : Array(Description)
 
-    def initialize(rules, @filename = "docs/description/description.json")
+    def initialize(rules, @filename = Path[DEFAULT_DOCS_DIR, "description", "description.json"])
       @descriptions = rules.map do |rule|
         Description.new(
           id: name(rule),

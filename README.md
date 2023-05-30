@@ -73,4 +73,5 @@ Codacy supports PHP, Python, Ruby, Java, JavaScript, and Scala, among others.
 
 ## Contributors
 
-  - [Vitalii Elenhaupt](https://github.com/your-github-user) - creator and maintainer
+  - [Vitalii Elenhaupt](https://github.com/veelenga) - creator and maintainer
+  - [Sija](https://github.com/Sija) Sijawusz Pur Rahnama - maintainer

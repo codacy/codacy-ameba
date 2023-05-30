@@ -3,6 +3,8 @@ require "./codacy-ameba/util"
 require "./codacy-ameba/generate/*"
 
 module Codacy::Ameba
+  DEFAULT_DOCS_DIR = "docs"
+
   def self.generate
     rules = ::Ameba::Config.load.rules
     rules.reject!(::Ameba::Rule::Lint::Syntax)

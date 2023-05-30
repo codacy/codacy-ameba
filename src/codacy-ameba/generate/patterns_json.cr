@@ -5,7 +5,7 @@ module Codacy::Ameba
     record Parameter,
       name : String,
       default : String do
-        include JSON::Serializable
+      include JSON::Serializable
     end
 
     record Pattern,
@@ -29,7 +29,7 @@ module Codacy::Ameba
 
     @patterns = [] of Pattern
 
-    def initialize(rules, @filename = "docs/patterns.json")
+    def initialize(rules, @filename = Path[DEFAULT_DOCS_DIR, "patterns.json"])
       @patterns = rules.map do |rule|
         Pattern.new(
           id: name(rule),

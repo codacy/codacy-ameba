@@ -1,4 +1,4 @@
-A rule that disallows trailing whitespaces.
+A rule that disallows trailing whitespace.
 
 YAML configuration example:
 

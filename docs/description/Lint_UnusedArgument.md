@@ -6,6 +6,7 @@ def method(a, b, c)
   a + b
 end
 ```
+
 and should be written as:
 
 ```

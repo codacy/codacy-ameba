@@ -1,6 +1,6 @@
 {
   "name": "ameba",
-  "version": "0.13.1",
+  "version": "1.4.3",
   "patterns": [
     {
       "patternId": "Layout_LineLength",
@@ -21,6 +21,12 @@
       "enabled": true
     },
     {
+      "patternId": "Lint_AmbiguousAssignment",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
       "patternId": "Lint_BadDirective",
       "level": "Warning",
       "category": "ErrorProne",
@@ -33,10 +39,22 @@
       "enabled": true
     },
     {
+      "patternId": "Lint_DebugCalls",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
       "patternId": "Lint_DebuggerStatement",
       "level": "Warning",
       "category": "ErrorProne",
       "enabled": true
+    },
+    {
+      "patternId": "Lint_DuplicatedRequire",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_EmptyEnsure",
@@ -57,7 +75,19 @@
       "enabled": false
     },
     {
+      "patternId": "Lint_Formatting",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
       "patternId": "Lint_HashDuplicatedKey",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Lint_LiteralAssignmentsInExpressions",
       "level": "Warning",
       "category": "ErrorProne",
       "enabled": false
@@ -73,6 +103,30 @@
       "level": "Warning",
       "category": "ErrorProne",
       "enabled": true
+    },
+    {
+      "patternId": "Lint_LiteralsComparison",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Lint_MissingBlockArgument",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Lint_NotNil",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Lint_NotNilAfterNoBang",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_PercentArrays",
@@ -129,6 +183,12 @@
       "enabled": false
     },
     {
+      "patternId": "Lint_SpecFocus",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
       "patternId": "Lint_UnneededDisableDirective",
       "level": "Warning",
       "category": "ErrorProne",
@@ -145,6 +205,12 @@
       "level": "Warning",
       "category": "ErrorProne",
       "enabled": true
+    },
+    {
+      "patternId": "Lint_UnusedBlockArgument",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_UselessAssign",
@@ -171,7 +237,37 @@
       "enabled": false
     },
     {
+      "patternId": "Performance_AnyInsteadOfEmpty",
+      "level": "Warning",
+      "category": "Performance",
+      "enabled": false
+    },
+    {
+      "patternId": "Performance_ChainedCallWithNoBang",
+      "level": "Warning",
+      "category": "Performance",
+      "enabled": false
+    },
+    {
+      "patternId": "Performance_CompactAfterMap",
+      "level": "Warning",
+      "category": "Performance",
+      "enabled": false
+    },
+    {
       "patternId": "Performance_FirstLastAfterFilter",
+      "level": "Warning",
+      "category": "Performance",
+      "enabled": false
+    },
+    {
+      "patternId": "Performance_FlattenAfterMap",
+      "level": "Warning",
+      "category": "Performance",
+      "enabled": false
+    },
+    {
+      "patternId": "Performance_MapInsteadOfBlock",
       "level": "Warning",
       "category": "Performance",
       "enabled": false
@@ -187,6 +283,18 @@
       "level": "Warning",
       "category": "CodeStyle",
       "enabled": true
+    },
+    {
+      "patternId": "Style_GuardClause",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "enabled": false
+    },
+    {
+      "patternId": "Style_IsAFilter",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "Style_IsANil",
@@ -213,10 +321,22 @@
       "enabled": true
     },
     {
+      "patternId": "Style_ParenthesesAroundCondition",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "enabled": false
+    },
+    {
       "patternId": "Style_PredicateName",
       "level": "Warning",
       "category": "CodeStyle",
       "enabled": true
+    },
+    {
+      "patternId": "Style_QueryBoolMethods",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "Style_RedundantBegin",
@@ -253,6 +373,12 @@
       "level": "Warning",
       "category": "CodeStyle",
       "enabled": true
+    },
+    {
+      "patternId": "Style_VerboseBlock",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "Style_WhileTrue",
