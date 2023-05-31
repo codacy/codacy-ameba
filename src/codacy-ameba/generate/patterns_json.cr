@@ -76,6 +76,7 @@ module Codacy::Ameba
     end
 
     def generate
+      Dir.mkdir_p(@filename.dirname)
       File.write(@filename, to_pretty_json)
     end
 

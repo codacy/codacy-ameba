@@ -1,3 +1,5 @@
+require "file_utils"
+
 module Codacy::Ameba
   class Markdown
     @rules : Array(::Ameba::Rule::Base)
@@ -6,6 +8,9 @@ module Codacy::Ameba
     end
 
     def generate
+      FileUtils.rm_rf(@directory)
+      FileUtils.mkdir_p(@directory)
+
       @rules.each do |rule|
         next unless doc = rule.class.parsed_doc
 
