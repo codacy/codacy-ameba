@@ -1,4 +1,4 @@
 # #Patterns: Layout_TrailingBlankLines
 
-# #Info: Layout_TrailingBlankLines
-puts "hello"
+puts "hello" # #Info: Layout_TrailingBlankLines
+
