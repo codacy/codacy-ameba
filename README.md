@@ -1,8 +1,8 @@
 # Codacy Ameba
 
 [![CircleCI](https://circleci.com/gh/codacy/codacy-ameba.svg?style=svg)](https://circleci.com/gh/codacy/codacy-ameba)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c7c17501a62e4e8cb66b75eb67354fcc)](https://app.codacy.com/app/veelenga/codacy-ameba?utm_source=github.com&utm_medium=referral&utm_content=veelenga/codacy-ameba&utm_campaign=Badge_Grade_Dashboard)
-[![Docker Version](https://images.microbadger.com/badges/version/codacy/codacy-ameba.svg)](https://microbadger.com/images/codacy/codacy-ameba "Get your own version badge on microbadger.com")
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c7c17501a62e4e8cb66b75eb67354fcc)](https://app.codacy.com/gh/codacy/codacy-ameba)
+[![Docker Image Version](https://img.shields.io/docker/v/codacy/codacy-ameba)](https://hub.docker.com/r/codacy/codacy-ameba)
 
 Tooling & Docker Definition for running [Ameba](https://github.com/crystal-ameba/ameba) on [Codacy](https://www.codacy.com/)
 
