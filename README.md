@@ -45,8 +45,8 @@ codacy-plugins-test multiple codacy-ameba
 
 ## Bump versions
 
-  - Crystal version should be updated in `Dockerfile` file (version of the image).
-  - Ameba version should be updated in `shard.yml`/`shard.lock` files.
+-   Crystal version should be updated in `Dockerfile` file (version of the image).
+-   Ameba version should be updated in `shard.yml`/`shard.lock` files.
 
 ## What is Codacy
 
@@ -54,11 +54,11 @@ codacy-plugins-test multiple codacy-ameba
 
 ### Among Codacy’s features
 
-  - Identify new Static Analysis issues
-  - Commit and Pull Request Analysis with GitHub, BitBucket/Stash, GitLab (and also direct git repositories)
-  - Auto-comments on Commits and Pull Requests
-  - Integrations with Slack, HipChat, Jira, YouTrack
-  - Track issues in Code Style, Security, Error Proneness, Performance, Unused Code and other categories
+-   Identify new Static Analysis issues
+-   Commit and Pull Request Analysis with GitHub, BitBucket/Stash, GitLab (and also direct git repositories)
+-   Auto-comments on Commits and Pull Requests
+-   Integrations with Slack, HipChat, Jira, YouTrack
+-   Track issues in Code Style, Security, Error Proneness, Performance, Unused Code and other categories
 
 Codacy also helps keep track of Code Coverage, Code Duplication, and Code Complexity.
 
@@ -66,13 +66,13 @@ Codacy supports PHP, Python, Ruby, Java, JavaScript, and Scala, among others.
 
 ## Contributing
 
- 1.  Fork it (<https://github.com/codacy/codacy-ameba/fork>)
- 2.  Create your feature branch (`git checkout -b my-new-feature`)
- 3.  Commit your changes (`git commit -am 'Add some feature'`)
- 4.  Push to the branch (`git push origin my-new-feature`)
- 5.  Create a new Pull Request
+1.  Fork it (<https://github.com/codacy/codacy-ameba/fork>)
+2.  Create your feature branch (`git checkout -b my-new-feature`)
+3.  Commit your changes (`git commit -am 'Add some feature'`)
+4.  Push to the branch (`git push origin my-new-feature`)
+5.  Create a new Pull Request
 
 ## Contributors
 
-  - [Vitalii Elenhaupt](https://github.com/veelenga) - creator and maintainer
-  - [Sija](https://github.com/Sija) Sijawusz Pur Rahnama - contributor and maintainer
+-   [Vitalii Elenhaupt](https://github.com/veelenga) - creator and maintainer
+-   [Sija](https://github.com/Sija) Sijawusz Pur Rahnama - contributor and maintainer
