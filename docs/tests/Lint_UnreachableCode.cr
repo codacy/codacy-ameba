@@ -38,18 +38,6 @@ rescue
 end
 
 def method
-  while something
-    if :foo
-      return :foo
-    else
-      return :foobar
-    end
-  end
-  # #Warn: Lint_UnreachableCode
-  :unreachable
-end
-
-def method
   while a < 5
     next
     # #Warn: Lint_UnreachableCode

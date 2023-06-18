@@ -3,12 +3,7 @@ module Codacy::Ameba
     record Parameter,
       name : String,
       description : String do
-      def to_json(json : JSON::Builder)
-        json.object do
-          json.field "name", name
-          json.field "description", description
-        end
-      end
+      include JSON::Serializable
     end
 
     record Description,
@@ -32,13 +27,24 @@ module Codacy::Ameba
 
     @descriptions : Array(Description)
 
-    def initialize(rules, @filename = "docs/description/description.json")
+    def initialize(rules, @filename = Path[DEFAULT_DOCS_DIR, "description", "description.json"])
       @descriptions = rules.map do |rule|
-        Description.new Ameba.generate_pattern_id(rule.name), rule.description, rule.description, 5, [] of Parameter
+        Description.new(
+          id: name(rule),
+          title: rule.description,
+          description: rule.description,
+          time_to_fix: 5,
+          parameters: [] of Parameter,
+        )
       end
     end
 
+    private def name(rule)
+      Ameba.generate_pattern_id(rule.name)
+    end
+
     def generate
+      Dir.mkdir_p(@filename.dirname)
       File.write(@filename, to_pretty_json)
     end
 

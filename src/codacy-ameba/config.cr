@@ -2,34 +2,35 @@ require "json"
 
 module Codacy::Ameba
   struct Parameter
-    JSON.mapping(
-      name: String,
-      value: String
-    )
+    include JSON::Serializable
+
+    property name : String
+    property value : String
   end
 
   struct Pattern
-    JSON.mapping(
-      id: {type: String, key: "patternId"},
-      parameters: Array(Parameter)?
-    )
+    include JSON::Serializable
+
+    @[JSON::Field(key: "patternId")]
+    property id : String
+    property parameters : Array(Parameter)?
   end
 
   struct Tool
-    JSON.mapping(
-      name: String,
-      patterns: Array(Pattern)
-    )
+    include JSON::Serializable
+
+    property name : String
+    property patterns : Array(Pattern)
   end
 
   struct Config
-    JSON.mapping(
-      files: {type: Array(String), default: [] of String},
-      tools: {type: Array(Tool), default: [] of Tool}
-    )
+    include JSON::Serializable
+
+    property files = [] of String
+    property tools = [] of Tool
 
     def self.load(base_dir, filename = ".codacyrc")
-      path = "#{base_dir}/#{filename}"
+      path = Path[base_dir, filename]
       data = File.read(path)
       Config.from_json(data)
     rescue

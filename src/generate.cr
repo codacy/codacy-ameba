@@ -1,11 +1,13 @@
 require "ameba"
-require "./codacy-ameba/util.cr"
+require "./codacy-ameba/util"
 require "./codacy-ameba/generate/*"
 
 module Codacy::Ameba
+  DEFAULT_DOCS_DIR = "docs"
+
   def self.generate
     rules = ::Ameba::Config.load.rules
-    rules.reject! { |r| r.is_a?(::Ameba::Rule::Lint::Syntax) }
+    rules.reject!(::Ameba::Rule::Lint::Syntax)
 
     Markdown.new(rules).generate
     PatternsJSON.new(rules).generate

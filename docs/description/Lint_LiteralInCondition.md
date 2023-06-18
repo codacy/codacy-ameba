@@ -6,6 +6,7 @@ always result in the same behaviour at run time, meaning it can be
 replaced with either the body of the construct, or deleted entirely.
 
 This is considered invalid:
+
 ```
 if "something"
   :ok

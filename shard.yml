@@ -4,7 +4,7 @@ version: 0.1.1
 authors:
   - Vitalii Elenhaupt <velenhaupt@gmail.com>
 
-crystal: 0.35.1
+crystal: 1.8.2
 
 license: MIT
 
@@ -14,5 +14,5 @@ targets:
 
 dependencies:
   ameba:
-    github: veelenga/ameba
-    version: 0.13.1
+    github: crystal-ameba/ameba
+    version: 1.4.3

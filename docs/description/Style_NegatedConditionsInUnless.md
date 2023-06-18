@@ -11,7 +11,7 @@ end
 And should be rewritten to the following:
 
 ```
-if s.emtpy?
+if s.empty?
   :ok
 end
 ```

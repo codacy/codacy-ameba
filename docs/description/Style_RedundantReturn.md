@@ -89,6 +89,6 @@ end
 ```
 Style/RedundantReturn:
   Enabled: true
-  AllowMutliReturn: true
+  AllowMultiReturn: true
   AllowEmptyReturn: true
 ```
