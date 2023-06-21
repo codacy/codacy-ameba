@@ -41,14 +41,17 @@ workflows:
           requires:
             - publish_local
       - codacy/publish_docker:
-          filters:
-            branches:
-              only: master
+          context: CodacyDocker
           requires:
             - unit_test
             - publish_local
             - plugins_test
+          filters:
+            branches:
+              only:
+                - master
       - codacy/tag_version:
+          name: tag_version
           context: CodacyAWS
           requires:
             - codacy/publish_docker
