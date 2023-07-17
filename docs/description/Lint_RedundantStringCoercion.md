@@ -16,6 +16,6 @@ And this is valid:
 YAML configuration example:
 
 ```
-Lint/RedundantStringCoersion
+Lint/RedundantStringCoercion
   Enabled: true
 ```

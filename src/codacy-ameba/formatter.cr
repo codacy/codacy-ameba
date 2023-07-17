@@ -22,7 +22,7 @@ module Codacy::Ameba
       {
         filename:  remove_base_dir(source.path),
         message:   issue.message,
-        patternId: issue.rule.name.gsub("/", "_"),
+        patternId: Ameba.generate_pattern_id(issue.rule.name),
         line:      location.line_number,
       }.to_json
     end
