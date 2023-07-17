@@ -3,7 +3,7 @@ WORKDIR /tmp/build
 COPY . /tmp/build
 RUN shards build --production
 
-FROM alpine:3.17.3
+FROM alpine:3.18.2
 RUN apk add yaml pcre2 gc libevent libgcc
 COPY docs /docs
 COPY --from=builder /tmp/build/bin/codacy-ameba /opt/app/
