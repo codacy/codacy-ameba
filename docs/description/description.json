@@ -48,6 +48,12 @@
     "timeToFix": 5
   },
   {
+    "patternId": "Lint_Documentation",
+    "title": "Enforces public types to be documented",
+    "description": "Enforces public types to be documented",
+    "timeToFix": 5
+  },
+  {
     "patternId": "Lint_DuplicatedRequire",
     "title": "Reports duplicated require statements",
     "description": "Reports duplicated require statements",
@@ -121,8 +127,8 @@
   },
   {
     "patternId": "Lint_NotNilAfterNoBang",
-    "title": "Identifies usage of `index/find` calls followed by `not_nil!`",
-    "description": "Identifies usage of `index/find` calls followed by `not_nil!`",
+    "title": "Identifies usage of `index/rindex/find` calls followed by `not_nil!`",
+    "description": "Identifies usage of `index/rindex/find` calls followed by `not_nil!`",
     "timeToFix": 5
   },
   {
@@ -252,6 +258,12 @@
     "timeToFix": 5
   },
   {
+    "patternId": "Performance_ExcessiveAllocations",
+    "title": "Identifies usage of excessive collection allocations",
+    "description": "Identifies usage of excessive collection allocations",
+    "timeToFix": 5
+  },
+  {
     "patternId": "Performance_FirstLastAfterFilter",
     "title": "Identifies usage of `first/last/first?/last?` calls that follow filters",
     "description": "Identifies usage of `first/last/first?/last?` calls that follow filters",
@@ -267,6 +279,12 @@
     "patternId": "Performance_MapInsteadOfBlock",
     "title": "Identifies usage of `sum/product` calls that follow `map`",
     "description": "Identifies usage of `sum/product` calls that follow `map`",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Performance_MinMaxAfterMap",
+    "title": "Identifies usage of `min/max/minmax` calls that follow `map`",
+    "description": "Identifies usage of `min/max/minmax` calls that follow `map`",
     "timeToFix": 5
   },
   {

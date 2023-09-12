@@ -1,6 +1,6 @@
 {
   "name": "ameba",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "patterns": [
     {
       "patternId": "Layout_LineLength",
@@ -49,6 +49,12 @@
       "level": "Warning",
       "category": "ErrorProne",
       "enabled": true
+    },
+    {
+      "patternId": "Lint_Documentation",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "Lint_DuplicatedRequire",
@@ -255,6 +261,12 @@
       "enabled": false
     },
     {
+      "patternId": "Performance_ExcessiveAllocations",
+      "level": "Warning",
+      "category": "Performance",
+      "enabled": false
+    },
+    {
       "patternId": "Performance_FirstLastAfterFilter",
       "level": "Warning",
       "category": "Performance",
@@ -268,6 +280,12 @@
     },
     {
       "patternId": "Performance_MapInsteadOfBlock",
+      "level": "Warning",
+      "category": "Performance",
+      "enabled": false
+    },
+    {
+      "patternId": "Performance_MinMaxAfterMap",
       "level": "Warning",
       "category": "Performance",
       "enabled": false

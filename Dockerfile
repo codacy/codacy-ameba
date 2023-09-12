@@ -1,9 +1,9 @@
-FROM crystallang/crystal:1.8.2-alpine as builder
+FROM crystallang/crystal:1.9-alpine as builder
 WORKDIR /tmp/build
 COPY . /tmp/build
 RUN shards build --production
 
-FROM alpine:3.18.2
+FROM alpine:3.18.3
 RUN apk add yaml pcre2 gc libevent libgcc
 COPY docs /docs
 COPY --from=builder /tmp/build/bin/codacy-ameba /opt/app/
