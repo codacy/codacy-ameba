@@ -1,4 +1,4 @@
-FROM crystallang/crystal:1.9-alpine as builder
+FROM crystallang/crystal:1.8.2-alpine as builder
 WORKDIR /tmp/build
 COPY . /tmp/build
 RUN shards build --production

@@ -4,7 +4,7 @@ version: 2.6.6
 authors:
   - Vitalii Elenhaupt <velenhaupt@gmail.com>
 
-crystal: 1.9
+crystal: 1.8.2
 
 license: MIT
 
