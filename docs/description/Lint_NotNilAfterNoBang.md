@@ -1,4 +1,5 @@
-This rule is used to identify usage of `index/find` calls followed by `not_nil!`.
+This rule is used to identify usage of `index/rindex/find` calls
+followed by a call to `not_nil!`.
 
 For example, this is considered a code smell:
 

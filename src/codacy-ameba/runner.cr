@@ -8,9 +8,11 @@ module Codacy::Ameba
     def run
       codacy_config = Config.load("/")
 
+      config_file_path = Path[dir, ::Ameba::Config::FILENAME]
       ameba_config = ::Ameba::Config.load(
-        Path[dir, ::Ameba::Config::FILENAME],
+        config_file_path,
         colors: true,
+        skip_reading_config: !File.exists?(config_file_path)
       )
 
       if codacy_config
