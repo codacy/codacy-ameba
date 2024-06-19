@@ -1,10 +1,10 @@
-FROM crystallang/crystal:1.10.1-alpine as builder
+FROM crystallang/crystal:1.12-alpine as builder
 WORKDIR /tmp/build
 COPY . /tmp/build
 RUN shards build --production
 
 # To test on M1 macs use: --platform=linux/amd64
-FROM alpine:3.18
+FROM alpine:3.20
 RUN apk add yaml pcre2 gc libevent libgcc
 COPY docs /docs
 COPY --from=builder /tmp/build/bin/codacy-ameba /opt/app/
