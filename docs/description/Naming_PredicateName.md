@@ -19,6 +19,6 @@ end
 YAML configuration example:
 
 ```
-Style/PredicateName:
+Naming/PredicateName:
   Enabled: true
 ```

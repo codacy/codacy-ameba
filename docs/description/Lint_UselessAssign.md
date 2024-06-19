@@ -23,4 +23,5 @@ YAML configuration example:
 ```
 Lint/UselessAssign:
   Enabled: true
+  ExcludeTypeDeclarations: false
 ```

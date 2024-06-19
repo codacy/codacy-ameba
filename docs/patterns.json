@@ -1,7 +1,19 @@
 {
   "name": "ameba",
-  "version": "1.5.0",
+  "version": "1.6.1",
   "patterns": [
+    {
+      "patternId": "Documentation_Documentation",
+      "level": "Info",
+      "category": "Documentation",
+      "enabled": false
+    },
+    {
+      "patternId": "Documentation_DocumentationAdmonition",
+      "level": "Info",
+      "category": "Documentation",
+      "enabled": false
+    },
     {
       "patternId": "Layout_LineLength",
       "level": "Info",
@@ -49,12 +61,6 @@
       "level": "Warning",
       "category": "ErrorProne",
       "enabled": true
-    },
-    {
-      "patternId": "Lint_Documentation",
-      "level": "Warning",
-      "category": "ErrorProne",
-      "enabled": false
     },
     {
       "patternId": "Lint_DuplicatedRequire",
@@ -189,7 +195,19 @@
       "enabled": false
     },
     {
+      "patternId": "Lint_SpecFilename",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
       "patternId": "Lint_SpecFocus",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Lint_Typos",
       "level": "Warning",
       "category": "ErrorProne",
       "enabled": false
@@ -232,6 +250,78 @@
     },
     {
       "patternId": "Metrics_CyclomaticComplexity",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_AccessorMethodName",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_AsciiIdentifiers",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_BinaryOperatorParameterName",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_BlockParameterName",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_ConstantNames",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_Filename",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_MethodNames",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_PredicateName",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_QueryBoolMethods",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_RescuedExceptionsVariableName",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_TypeNames",
+      "level": "Info",
+      "category": "ErrorProne",
+      "enabled": false
+    },
+    {
+      "patternId": "Naming_VariableNames",
       "level": "Info",
       "category": "ErrorProne",
       "enabled": false
@@ -297,12 +387,6 @@
       "enabled": false
     },
     {
-      "patternId": "Style_ConstantNames",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
       "patternId": "Style_GuardClause",
       "level": "Warning",
       "category": "CodeStyle",
@@ -327,12 +411,6 @@
       "enabled": false
     },
     {
-      "patternId": "Style_MethodNames",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
       "patternId": "Style_NegatedConditionsInUnless",
       "level": "Warning",
       "category": "CodeStyle",
@@ -340,18 +418,6 @@
     },
     {
       "patternId": "Style_ParenthesesAroundCondition",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "enabled": false
-    },
-    {
-      "patternId": "Style_PredicateName",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
-      "patternId": "Style_QueryBoolMethods",
       "level": "Warning",
       "category": "CodeStyle",
       "enabled": false
@@ -375,19 +441,7 @@
       "enabled": false
     },
     {
-      "patternId": "Style_TypeNames",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
       "patternId": "Style_UnlessElse",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "enabled": true
-    },
-    {
-      "patternId": "Style_VariableNames",
       "level": "Warning",
       "category": "CodeStyle",
       "enabled": true
