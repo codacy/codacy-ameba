@@ -4,7 +4,7 @@ version: 2.6.6
 authors:
   - Vitalii Elenhaupt <velenhaupt@gmail.com>
 
-crystal: 1.8.2
+crystal: 1.15.1
 
 license: MIT
 
@@ -15,4 +15,4 @@ targets:
 dependencies:
   ameba:
     github: crystal-ameba/ameba
-    version: 1.5.0
+    version: 1.6.4
