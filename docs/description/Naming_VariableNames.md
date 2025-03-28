@@ -18,6 +18,6 @@ wrong_Name = 2
 YAML configuration example:
 
 ```
-Style/VariableNames:
+Naming/VariableNames:
   Enabled: true
 ```

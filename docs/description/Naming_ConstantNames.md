@@ -17,6 +17,6 @@ Wrong_NAME = 2
 YAML configuration example:
 
 ```
-Style/ConstantNames:
+Naming/ConstantNames:
   Enabled: true
 ```

@@ -22,6 +22,6 @@ end
 YAML configuration example:
 
 ```
-Style/QueryBoolMethods:
+Naming/QueryBoolMethods:
   Enabled: true
 ```

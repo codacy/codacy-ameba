@@ -4,7 +4,7 @@ modules, classes, enums, methods and macros.
 YAML configuration example:
 
 ```
-Lint/Documentation:
+Documentation/Documentation:
   Enabled: true
   IgnoreClasses: false
   IgnoreModules: true

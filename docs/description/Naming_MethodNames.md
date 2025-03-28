@@ -33,6 +33,6 @@ end
 YAML configuration example:
 
 ```
-Style/MethodNames:
+Naming/MethodNames:
   Enabled: true
 ```

@@ -1,5 +1,17 @@
 [
   {
+    "patternId": "Documentation_Documentation",
+    "title": "Enforces public types to be documented",
+    "description": "Enforces public types to be documented",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Documentation_DocumentationAdmonition",
+    "title": "Reports documentation admonitions",
+    "description": "Reports documentation admonitions",
+    "timeToFix": 5
+  },
+  {
     "patternId": "Layout_LineLength",
     "title": "Disallows lines longer than `MaxLength` number of symbols",
     "description": "Disallows lines longer than `MaxLength` number of symbols",
@@ -45,12 +57,6 @@
     "patternId": "Lint_DebuggerStatement",
     "title": "Disallows calls to debugger",
     "description": "Disallows calls to debugger",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "Lint_Documentation",
-    "title": "Enforces public types to be documented",
-    "description": "Enforces public types to be documented",
     "timeToFix": 5
   },
   {
@@ -127,8 +133,8 @@
   },
   {
     "patternId": "Lint_NotNilAfterNoBang",
-    "title": "Identifies usage of `index/rindex/find` calls followed by `not_nil!`",
-    "description": "Identifies usage of `index/rindex/find` calls followed by `not_nil!`",
+    "title": "Identifies usage of `index/rindex/find/match` calls followed by `not_nil!`",
+    "description": "Identifies usage of `index/rindex/find/match` calls followed by `not_nil!`",
     "timeToFix": 5
   },
   {
@@ -186,9 +192,21 @@
     "timeToFix": 5
   },
   {
+    "patternId": "Lint_SpecFilename",
+    "title": "Enforces spec filenames to have `_spec` suffix",
+    "description": "Enforces spec filenames to have `_spec` suffix",
+    "timeToFix": 5
+  },
+  {
     "patternId": "Lint_SpecFocus",
     "title": "Reports focused spec items",
     "description": "Reports focused spec items",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Lint_Typos",
+    "title": "Reports typos found in source files",
+    "description": "Reports typos found in source files",
     "timeToFix": 5
   },
   {
@@ -231,6 +249,78 @@
     "patternId": "Metrics_CyclomaticComplexity",
     "title": "Disallows methods with a cyclomatic complexity higher than `MaxComplexity`",
     "description": "Disallows methods with a cyclomatic complexity higher than `MaxComplexity`",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_AccessorMethodName",
+    "title": "Makes sure that accessor methods are named properly",
+    "description": "Makes sure that accessor methods are named properly",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_AsciiIdentifiers",
+    "title": "Disallows non-ascii characters in identifiers",
+    "description": "Disallows non-ascii characters in identifiers",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_BinaryOperatorParameterName",
+    "title": "Enforces that certain binary operator methods have their sole parameter named `other`",
+    "description": "Enforces that certain binary operator methods have their sole parameter named `other`",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_BlockParameterName",
+    "title": "Disallows non-descriptive block parameter names",
+    "description": "Disallows non-descriptive block parameter names",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_ConstantNames",
+    "title": "Enforces constant names to be in screaming case",
+    "description": "Enforces constant names to be in screaming case",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_Filename",
+    "title": "Enforces file names to be in underscored case",
+    "description": "Enforces file names to be in underscored case",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_MethodNames",
+    "title": "Enforces method names to be in underscored case",
+    "description": "Enforces method names to be in underscored case",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_PredicateName",
+    "title": "Disallows tautological predicate names",
+    "description": "Disallows tautological predicate names",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_QueryBoolMethods",
+    "title": "Reports boolean properties without the `?` suffix",
+    "description": "Reports boolean properties without the `?` suffix",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_RescuedExceptionsVariableName",
+    "title": "Makes sure that rescued exceptions variables are named as expected",
+    "description": "Makes sure that rescued exceptions variables are named as expected",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_TypeNames",
+    "title": "Enforces type names in camelcase manner",
+    "description": "Enforces type names in camelcase manner",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Naming_VariableNames",
+    "title": "Enforces variable names to be in underscored case",
+    "description": "Enforces variable names to be in underscored case",
     "timeToFix": 5
   },
   {
@@ -294,12 +384,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "Style_ConstantNames",
-    "title": "Enforces constant names to be in screaming case",
-    "description": "Enforces constant names to be in screaming case",
-    "timeToFix": 5
-  },
-  {
     "patternId": "Style_GuardClause",
     "title": "Check for conditionals that can be replaced with guard clauses",
     "description": "Check for conditionals that can be replaced with guard clauses",
@@ -324,12 +408,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "Style_MethodNames",
-    "title": "Enforces method names to be in underscored case",
-    "description": "Enforces method names to be in underscored case",
-    "timeToFix": 5
-  },
-  {
     "patternId": "Style_NegatedConditionsInUnless",
     "title": "Disallows negated conditions in unless",
     "description": "Disallows negated conditions in unless",
@@ -339,18 +417,6 @@
     "patternId": "Style_ParenthesesAroundCondition",
     "title": "Disallows redundant parentheses around control expressions",
     "description": "Disallows redundant parentheses around control expressions",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "Style_PredicateName",
-    "title": "Disallows tautological predicate names",
-    "description": "Disallows tautological predicate names",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "Style_QueryBoolMethods",
-    "title": "Reports boolean properties without the `?` suffix",
-    "description": "Reports boolean properties without the `?` suffix",
     "timeToFix": 5
   },
   {
@@ -372,21 +438,9 @@
     "timeToFix": 5
   },
   {
-    "patternId": "Style_TypeNames",
-    "title": "Enforces type names in camelcase manner",
-    "description": "Enforces type names in camelcase manner",
-    "timeToFix": 5
-  },
-  {
     "patternId": "Style_UnlessElse",
     "title": "Disallows the use of an `else` block with the `unless`",
     "description": "Disallows the use of an `else` block with the `unless`",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "Style_VariableNames",
-    "title": "Enforces variable names to be in underscored case",
-    "description": "Enforces variable names to be in underscored case",
     "timeToFix": 5
   },
   {

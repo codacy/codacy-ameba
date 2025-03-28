@@ -47,6 +47,6 @@ end
 YAML configuration example:
 
 ```
-Style/TypeNames:
+Naming/TypeNames:
   Enabled: true
 ```
