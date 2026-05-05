@@ -8,8 +8,10 @@ module Codacy::Ameba
     def source_finished(source)
       source.issues.each do |issue|
         if issue.syntax?
+          formatted_error = format_error(source)
+
           @mutex.synchronize do
-            output << format_error(source)
+            output.puts(formatted_error)
           end
           return
         end
@@ -17,8 +19,10 @@ module Codacy::Ameba
         next if issue.disabled?
         next unless location = issue.location
 
+        formatted_issue = format_issue(issue, source, location)
+
         @mutex.synchronize do
-          output.puts format_issue(issue, source, location)
+          output.puts(formatted_issue)
         end
       end
     end
