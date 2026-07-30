@@ -1,19 +1,28 @@
 module Codacy::Ameba
   class Formatter < ::Ameba::Formatter::BaseFormatter
+    @mutex = Mutex.new
+
     def initialize(@output = STDOUT, @base_dir = "./")
     end
 
     def source_finished(source)
-      source.issues.each do |e|
-        if e.rule.is_a?(::Ameba::Rule::Lint::Syntax)
-          output << format_error(source)
+      source.issues.each do |issue|
+        if issue.syntax?
+          formatted_error = format_error(source)
+
+          @mutex.synchronize do
+            output.puts(formatted_error)
+          end
           return
         end
 
-        next if e.disabled?
+        next if issue.disabled?
+        next unless location = issue.location
 
-        if loc = e.location
-          output << format_issue(e, source, loc) << "\n"
+        formatted_issue = format_issue(issue, source, location)
+
+        @mutex.synchronize do
+          output.puts(formatted_issue)
         end
       end
     end
@@ -35,7 +44,7 @@ module Codacy::Ameba
     end
 
     private def remove_base_dir(path)
-      path.gsub(/^#{@base_dir}/, "").gsub(/^\//, "")
+      path.lchop(@base_dir).lchop('/')
     end
   end
 end
