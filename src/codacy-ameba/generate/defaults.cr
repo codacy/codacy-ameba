@@ -3,7 +3,6 @@ module Codacy::Ameba
     def self.patterns
       %w[
         Layout_TrailingBlankLines
-        Layout_TrailingWhitespace
         Lint_ComparisonToBoolean
         Lint_DebuggerStatement
         Lint_EmptyEnsure
